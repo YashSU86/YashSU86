@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> </title>
+  </head>
+      <style> 
+      
+      </style>
+    <body>
+      <p>Cart Quantity</p>
+
+<!-- Show Cart Quantity -->
+        <button onclick="
+        
+        displayCartQuantity();
+        ">Show Quantity</button>
+
+<!-- update Cart Quantity by 1 -->
+
+<!-- The below codeline is the shortcut to reassign the value in the same variable:: cartQuantity= cartQuantity +1;  and  cartQuantity += 1;-->
+        <button onclick="
+        
+        updateCartQuantity (1);
+        ">Add to Cart</button>
+
+<!-- update Cart Quantity by Adding number: 2 -->
+
+<!-- The below codeline is the shortcut to reassign the value in the same variable:: cartQuantity= cartQuantity +2; -->
+        <button onclick="
+       updateCartQuantity (2);
+        ">+2</button>
+
+<!-- update Cart Quantity by Adding number: 3 -->
+
+<!-- The below codeline is the shortcut to reassign the value in the same variable:: cartQuantity= cartQuantity +3; -->
+
+        <button onclick="     
+       updateCartQuantity(3);
+       ">+3</button>
+
+        <button onclick="
+       updateCartQuantity(4);
+       ">+4
+        </button>
+
+        <button onclick="
+       updateCartQuantity(5);
+       ">+5
+        </button>
+
+<!-- update Cart Quantity into 0 -->
+        <button onclick ="
+        updateCartQuantity (-1);
+        ">Remove from cart</button>
+
+        <button onclick ="
+        updateCartQuantity (-2);
+        ">-2</button>
+
+        <button onclick ="
+        updateCartQuantity (-3);
+        ">-3</button>
+
+        <button onclick ="
+        cartQuantity=0;
+        console.log('cart was reset')
+        //cart is reset to 0//
+         displayCartQuantity();
+        ">Reset Cart</button>
+
+        <p class="js-message"></p>
+
+
+       
+
+      <script>
+        
+        let cartQuantity =0;
+
+        function updateCartQuantity (count) {
+        if(cartQuantity + count >10) {
+          alert('The cart is full');
+          return;
+        }
+
+        if (cartQuantity + count <0){ 
+          alert('Not enough items in the cart'); 
+          return;
+        }
+        
+        cartQuantity += count;
+
+         displayCartQuantity();
+   }
+
+          function displayCartQuantity() {
+            document.querySelector('.js-message').innerHTML= `Cart quantity: ${cartQuantity}`;
+          }
+      </script>
+
+    </body>
+</html>
+
+
+
+

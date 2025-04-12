@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input placeholder="Write something"
+    class="js-input"
+    onkeyup="
+      //updateText();
+      //alternate way to run the code//
+
+      const inputElement= document.querySelector('.js-input');
+      document.querySelector('.js-message').innerHTML=inputElement.value;
+
+
+    ">
+    <p class="js-message"></p>
+
+    <script>
+      //comment out the below line to run alternate solution//
+
+        /* function updateText() {
+          const inputElement=document.querySelector('.js-input');
+          document.querySelector('.js-message').innerHTML=inputElement.value;
+        }*/
+      </script>
+  </body>
+</html>

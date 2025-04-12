@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button>9a</button>
+    <button onclick="
+     clicked ();
+    "class="js-9b-button">9b button</button>
+
+    <script>
+     // console.log(document.querySelector('button'));
+      
+     /* document.querySelector('.js-9b-button').innerHTML='9b done!'; */
+      
+      function clicked () {
+        const buttonElement= document.querySelector('.js-9b-button');
+        if (buttonElement.innerText === '9b button') {
+            buttonElement.innerHTML='clicked';
+        }
+        else {
+          buttonElement.innerHTML ='9b button';
+        }
+      }
+    </script>
+  </body>
+</html>

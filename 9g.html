@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>DOM Projects</title>
+
+  </head>
+    <body>
+      <p>Youtube Subscribe Button</p>
+
+       <button onclick="
+        subscribe ();
+        "class="js-subscribe-button">
+        Subscribe
+       </button>
+        
+        <p>Amazon Shipping Calculator</p>
+
+        <input placeholder="Cost of order"
+        class="js-cost-input" onkeydown="
+         handleCostKeyDown(event); ">
+
+        <button onclick="
+          calculateTotal ();
+        ">Calculate</button>
+        <p class="js-total-cost"></p>
+
+        <p>Orders under $40 = +$10 shipping.</p>
+        <p>Orders under $40 = FREE shipping.</p>
+       
+       <script>
+       
+        //console.log ('25'- 5);//
+        function handleCostKeyDown (event) {
+          //console.log(event.key);//
+          if (event.key === 'Enter') {
+            calculateTotal ();
+          }
+        }
+        function calculateTotal() {
+          const inputElement = document.querySelector('.js-cost-input');
+
+          //Convert numbers into cents by *100//
+          let cost = Number(inputElement.value)*100;
+          
+
+
+          if (cost <4000) {
+           cost=cost + 1000;
+           //console.log(cost)//;
+          }
+
+        // Convert back to the dollars at the end//
+          document.querySelector('.js-total-cost').innerHTML=`$${cost/100}`;
+        }
+
+
+        function subscribe () {
+            const buttonElement = document.querySelector('.js-subscribe-button');
+        /* We can use innerHtml when there is no space between the text for the button name if there is space we can use inerText */
+
+            /*if (buttonElement.innerHTML === 'Subscribe')*/
+            if (buttonElement.innerText === 'Subscribe') {
+            buttonElement.innerHTML='Subscribed';
+          } else {
+            buttonElement.innerHTML = 'Subscribe';
+          }
+        }
+        
+
+      </script>
+    </body>
+</html>
+
+
+
+
